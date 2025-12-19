@@ -1,0 +1,81 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.menu-container {
+  background-image: url('menuback.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #FFF;
+  font-size: 32px;
+  padding: 25px 50px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+}
+
+.menu li a:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menu li a {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.menu li:nth-child(1) a {
+  animation-delay: 0.2s;
+}
+
+.menu li:nth-child(2) a {
+  animation-delay: 0.4s;
+}
+
+.menu li:nth-child(3) a {
+  animation-delay: 0.6s;
+}
+
+.menu li:nth-child(4) a {
+  animation-delay: 0.8s;
+}
+
+.back-arrow { position: fixed; top: 20px; left: 20px; font-size: 30px; color: #ffffff; text-decoration: none; }

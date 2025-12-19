@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gujarati</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Lato, sans-serif;
+            margin: 0;
+            padding: 1rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            transition: transform 1000ms;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            max-width: 100%;
+            width: 70rem;
+        }
+
+        figure {
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        figure::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(0, 0, 0, 0.782);
+            transform-origin: center;
+            opacity: 0;
+            transform: scale(2);
+            transition: opacity 300ms;
+        }
+
+        figcaption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            font-size: 1.2rem;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 600ms, transform 600ms;
+        }
+
+        a:is(:hover, :focus) figure::after {
+            opacity: 1;
+        }
+
+        a:is(:hover, :focus) figcaption {
+            opacity: 1;
+            transition: opacity 600ms;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            figcaption {
+                transform: translate3d(0, 2rem, 0);
+            }
+
+            figure::after {
+                border-radius: 50%;
+                opacity: 1;
+                transform: scale(0);
+                transition: transform 900ms;
+            }
+
+            a:is(:hover, :focus) figure::after {
+                transform: scale(2.5);
+            }
+
+            a:is(:hover, :focus) figcaption {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                transition: opacity 600ms 400ms, transform 600ms 400ms;
+            }
+
+            a:is(:hover, :focus) img {
+                transform: scale(1.2);
+            }
+        }
+
+        .cart {
+            background-color: white;
+            color: black;
+            font-size: 30px;
+            align-items: center;
+            cursor: pointer;
+            margin: 20px;
+            border: 3px solid grey;
+            border-radius: 15px;
+            height: 45px;
+            width: 250px;
+        }
+
+        .button {
+            border: none;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .cart:hover {
+            border: none;
+            color: white;
+            background-color: black;
+        }
+
+        h3 {
+            display: none; /* Hide the h3 tags */
+        }
+    
+        .back-arrow { position: fixed; top: 20px; left: 20px; font-size: 30px; color: #ffffff; text-decoration: none; }
+
+    </style>
+</head>
+
+<body>
+    
+    <a href="menu.html" class="back-arrow">&#9664;</a>
+<ul>
+    <li>
+        <a href="dhokala_recipe.html">
+            <figure>
+                <img src='dhokala.png' >
+                <figcaption>A steamed savory cake made from fermented rice and chickpea flour batter, typically served with chutney.
+                </figcaption>
+            </figure>
+        </a>
+    </li>
+    <li>
+        <a href="thepala_recipe.html">
+            <figure>
+                <img src='thepla.png' >
+                <figcaption> Thin, spiced flatbread made from wheat flour, often with fenugreek leaves, ideal for breakfast or travel.
+                </figcaption>
+            </figure>
+        </a>
+    </li>
+    <li>
+        <a href="khandavi_recipe.html">
+            <figure>
+                <img src='khandavi.png' >
+                <figcaption> Rolled and seasoned gram flour (besan) strips, cooked to a silky texture, usually served as a snack or appetizer.
+                </figcaption>
+            </figure>
+        </a>
+    </li>
+    <li>
+        <a href="fafada_recipe.html">
+            <figure>
+                <img src='fafda.png' >
+                <figcaption>Crispy, fried snack made from gram flour (besan), often served with chutney, popular during festivals like Diwali.
+                </figcaption>
+            </figure>
+        </a>
+    </li>
+    <li>
+        <a href="undhiyu_recipe.html">
+            <figure>
+                <img src="undhiyu.png" >
+                <figcaption>A mixed vegetable dish prepared with a variety of seasonal vegetables and spices, often served during winter festivals like Uttarayan.
+                </figcaption>
+            </figure>
+        </a>
+    </li>
+    <li>
+        <a href="khaman_recipe.html">
+            <figure>
+                <img src='Khaman.png' >
+                <figcaption>Soft and fluffy steamed cake made from gram flour (besan), usually served with chutney, a popular breakfast or snack item.
+                </figcaption>
+            </figure>
+        </a>
+    </li>
+</ul>
+</body>
+</html>

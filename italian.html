@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Italian</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Lato, sans-serif;
+            margin: 0;
+            padding: 1rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            transition: transform 1000ms;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 0.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            max-width: 100%;
+            width: 70rem;
+        }
+
+        figure {
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        figure::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(0, 0, 0, 0.782);
+            transform-origin: center;
+            opacity: 0;
+            transform: scale(2);
+            transition: opacity 300ms;
+        }
+
+        figcaption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            place-items: center;
+            text-align: center;
+            padding: 1rem;
+            color: white;
+            font-size: 1.2rem;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 600ms, transform 600ms;
+        }
+
+        a:is(:hover, :focus) figure::after {
+            opacity: 1;
+        }
+
+        a:is(:hover, :focus) figcaption {
+            opacity: 1;
+            transition: opacity 600ms;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            figcaption {
+                transform: translate3d(0, 2rem, 0);
+            }
+
+            figure::after {
+                border-radius: 50%;
+                opacity: 1;
+                transform: scale(0);
+                transition: transform 900ms;
+            }
+
+            a:is(:hover, :focus) figure::after {
+                transform: scale(2.5);
+            }
+
+            a:is(:hover, :focus) figcaption {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+                transition: opacity 600ms 400ms, transform 600ms 400ms;
+            }
+
+            a:is(:hover, :focus) img {
+                transform: scale(1.2);
+            }
+        }
+
+        .cart {
+            background-color: white;
+            color: black;
+            font-size: 30px;
+            align-items: center;
+            cursor: pointer;
+            margin: 20px;
+            border: 3px solid grey;
+            border-radius: 15px;
+            height: 45px;
+            width: 250px;
+        }
+
+        .button {
+            border: none;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .cart:hover {
+            border: none;
+            color: white;
+            background-color: black;
+        }
+
+        h3 {
+            display: none; /* Hide the h3 tags */
+        }
+        .back-arrow { position: fixed; top: 20px; left: 20px; font-size: 30px; color: #ffffff; text-decoration: none; }
+
+    </style>
+</head>
+
+<body>
+    
+    <a href="menu.html" class="back-arrow">&#9664;</a>
+<ul>
+    <li>
+        <a href="pasta_recipe.html">
+            <figure>
+                <img src='pasta.png' >
+                <figcaption>Versatile Italian staple made from wheat flour and water, available in various shapes and sizes, commonly served with a variety of sauces ranging from tomato-based to creamy.
+                </figcaption>
+            </figure> 
+        </a>
+    </li> 
+    <li>
+        <a href="arancini_recipe.html">
+            <figure>
+                <img src='Arancini.png' >
+                <figcaption>Sicilian specialty consisting of leftover risotto formed into balls, stuffed with cheese or ragù, coated in breadcrumbs, and deep-fried until golden and crispy.
+                </figcaption>
+            </figure>
+        </a>
+    </li> 
+    <li>
+        <a href="focaccia bread_recipe.html">
+            <figure>
+                <img src='Focaccia bread.png' >
+                <figcaption> Soft, slightly chewy bread originating from Liguria, Italy, topped with olive oil, salt, and sometimes herbs like rosemary or thyme, often served as an appetizer or snack.
+                </figcaption>
+            </figure>
+        </a>
+    </li> 
+    <li>
+        <a href="Gnocchi alla Sorrentina_recipe.html">
+            <figure>
+                <img src='Gnocchi alla Sorrentina.png' >
+                <figcaption>Pillowy potato dumplings served in a rich tomato sauce with fresh basil and melted mozzarella cheese, a classic Italian comfort dish hailing from the Sorrento region
+                </figcaption>
+            </figure>
+        </a>
+    </li> 
+    <li>
+        <a  href="bruschetta_recipe.html">
+            <figure>
+                <img src='bruschetta.png' >
+                <figcaption>Slices of toasted bread rubbed with garlic and topped with diced tomatoes, fresh basil, olive oil, balsamic vinegar, and sometimes additional ingredients like mozzarella cheese or olives, making for a flavorful and satisfying appetizer or snack.
+                </figcaption>
+            </figure>
+        </a>
+    </li> 
+    <li>
+        <a href="pizza_recipe.html">
+            <figure>
+                <img src='pizza.png' >
+                <figcaption> Iconic Italian creation consisting of a thin, round crust topped with tomato sauce, mozzarella cheese, and a variety of toppings like pepperoni, mushrooms, or vegetables, baked in a wood-fired oven for a deliciously crispy texture and melty cheese.
+                </figcaption>
+            </figure>
+        </a>
+    </li>
+</ul>
+</body>
+</html>
